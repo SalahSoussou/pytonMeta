@@ -27,3 +27,7 @@ for i in range(10):
     with open('newText.txt','a') as newFile:
         newFile.writelines(["\n appended text: " + str(i),"\n more append"])
 
+arr= [1,3,4]
+arr.extend(arr)
+arr.insert(0,0)
+print(arr)
