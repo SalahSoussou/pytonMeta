@@ -1,4 +1,5 @@
 from re import X
+from unicodedata import name
 
 
 def sum(n):
@@ -39,3 +40,29 @@ class Ricipe():
 my_class = Ricipe('233','786')
 
 my_class.my_func()
+
+# ==========================================
+class Payment:
+    def __init__(self, name,payment,amount) -> None:
+        self.name = name
+        self.payment = payment
+        self.amount = amount
+    def pay(self):
+        self.payment = 'yes'
+
+    def status(self):
+        if self.payment == 'yes':
+            return self.name + " is paid: " + str(self.amount)
+        else:
+            return self.name + " is not paid yet"
+
+salah = Payment('Salah',"no",1000)
+ahmad = Payment('ahmad',"no",2000)
+
+print( salah.status())
+print( ahmad.status())
+
+salah.pay()
+print("after payment \n", salah.status())
+print( ahmad.status())
+
